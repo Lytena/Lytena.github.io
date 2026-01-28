@@ -12,11 +12,11 @@
       --border:#e9e9e9;
       --accent:#17c117;
       --bg:#fff;
-      --gap:22px;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       background:var(--bg);
@@ -28,15 +28,12 @@
     .wrap{
       max-width:1400px;
       margin:0 auto;
-      padding:28px 34px 50px;
+      padding:32px 34px 60px;
     }
 
+    /* HEADER */
     header{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      border-bottom:1px solid var(--border);
-      padding-bottom:18px;
+      margin-bottom:36px;
     }
 
     .brand{
@@ -44,119 +41,54 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:0.8px;
-      line-height:1.1;
     }
 
     .meta{
-      margin-top:8px;
+      margin-top:10px;
       display:flex;
       flex-direction:column;
       gap:6px;
       font-size:13px;
       color:var(--muted);
-      letter-spacing:0.2px;
-      text-transform:none;
-      font-weight:600;
     }
 
     .meta a{
       color:var(--text);
       text-decoration:none;
-      border-bottom:1px solid transparent;
       width:fit-content;
+      border-bottom:1px solid transparent;
     }
+
     .meta a:hover{
       border-bottom-color:var(--accent);
     }
 
-    nav{
-      margin-top:18px;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:0.8px;
-      text-transform:uppercase;
-      display:flex;
-      gap:12px;
-    }
-
-    nav a{
-      color:var(--text);
-      text-decoration:none;
-    }
-    nav a.active{ color:var(--accent); }
-
-    .main{
-      margin-top:24px;
-      display:grid;
-      grid-template-columns:270px 1fr;
-      gap:22px;
-    }
-
-    aside{
-      position:sticky;
-      top:18px;
-    }
-
-    .filters{
-      font-size:13px;
-      font-weight:800;
-      text-transform:uppercase;
-      line-height:1.8;
-      margin-bottom:20px;
-    }
-
-    .filters a{
-      text-decoration:none;
-      color:var(--text);
-      display:block;
-    }
-    .filters a.active{ color:var(--accent); }
-
-    .list{
-      border-top:1px solid var(--border);
-      padding-top:14px;
-    }
-
-    .year{
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:8px;
-    }
-
-    .projects{
-      list-style:none;
-      padding:0;
-      margin:0;
-      font-size:12.5px;
-      line-height:1.65;
-    }
-    .projects li span{ color:var(--muted); }
-
+    /* GRID */
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:22px;
+      gap:24px;
     }
 
     .card{
-      border-radius:6px;
-      overflow:hidden;
       background:#fafafa;
       border:1px solid var(--border);
+      border-radius:6px;
+      overflow:hidden;
     }
 
     .card img{
       width:100%;
-      height:auto;
       display:block;
+      object-fit:cover;
     }
 
-    .square img{ aspect-ratio:1/1; object-fit:cover; }
-    .wide img{ aspect-ratio:16/9; object-fit:cover; }
-    .tall img{ aspect-ratio:3/4; object-fit:cover; }
+    .square img{ aspect-ratio:1 / 1; }
+    .wide img{ aspect-ratio:16 / 9; }
+    .tall img{ aspect-ratio:3 / 4; }
 
     .caption{
-      padding:12px 12px 14px;
+      padding:14px;
       background:#fff;
       border-top:1px solid var(--border);
     }
@@ -164,9 +96,9 @@
     .caption h3{
       margin:0 0 6px;
       font-size:13px;
-      letter-spacing:0.2px;
       font-weight:800;
       text-transform:uppercase;
+      letter-spacing:0.6px;
     }
 
     .caption p{
@@ -176,15 +108,13 @@
       color:var(--muted);
     }
 
+    /* RESPONSIVE */
     @media(max-width:1100px){
       .grid{ grid-template-columns:repeat(2,1fr); }
     }
 
-    @media(max-width:860px){
-      .main{ grid-template-columns:1fr; }
-      aside{ position:relative; }
+    @media(max-width:720px){
       .grid{ grid-template-columns:1fr; }
-      header{ align-items:flex-start; }
     }
   </style>
 </head>
@@ -193,104 +123,69 @@
   <div class="wrap">
 
     <header>
-      <div>
-        <div class="brand">Haruku Nishikawa</div>
-
-        <!-- EDIT THESE -->
-        <div class="meta">
-          <a href="mailto:your.email@example.com">your.email@example.com</a>
-          <a href="https://www.linkedin.com/in/your-linkedin-here/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-        </div>
+      <div class="brand">Haruku Nishikawa</div>
+      <div class="meta">
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+        <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
       </div>
     </header>
 
-    <nav>
-      <a class="active" href="#">Work</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+    <main>
+      <div class="grid">
 
-    <section class="main">
+        <article class="card square">
+          <img src="pp1.jpg" alt="Project 01">
+          <div class="caption">
+            <h3>Project 01</h3>
+            <p>Brief description of the project, your role, and the design or engineering focus.</p>
+          </div>
+        </article>
 
-      <aside>
-        <div class="filters">
-          <a class="active" href="#">All</a>
-          <a href="#">rail</a>
-          <a href="#">design</a>
-          <a href="#">Product</a>
-          <a href="#">Exhibition</a>
-          <a href="#">Project</a>
-        </div>
+        <article class="card wide">
+          <img src="pp2.jpg" alt="Project 02">
+          <div class="caption">
+            <h3>Project 02</h3>
+            <p>Short context explaining what the viewer is seeing and why it matters.</p>
+          </div>
+        </article>
 
-        <div class="list">
-          <div class="year">2025</div>
-          <ul class="projects">
-            <li>Project Title 01 <span>(Client)</span></li>
-            <li>Project Title 02 <span>(Client)</span></li>
-            <li>Project Title 03 <span>(Client)</span></li>
-            <li>Project Title 04 <span>(Client)</span></li>
-            <li>Project Title 05 <span>(Client)</span></li>
-          </ul>
-        </div>
-      </aside>
+        <article class="card tall">
+          <img src="pp3.jpg" alt="Project 03">
+          <div class="caption">
+            <h3>Project 03</h3>
+            <p>Problem → approach → outcome, kept concise and readable.</p>
+          </div>
+        </article>
 
-      <main>
-        <div class="grid">
+        <article class="card wide">
+          <img src="pp4.jpg" alt="Project 04">
+          <div class="caption">
+            <h3>Project 04</h3>
+            <p>Tools, materials, or systems used, with one clear design intent.</p>
+          </div>
+        </article>
 
-          <article class="card square">
-            <img src="pp1.jpg" alt="Project 01">
-            <div class="caption">
-              <h3>Project 01</h3>
-              <p>Short description goes here: what it is, what you did, and one key detail (materials, process, outcome).</p>
-            </div>
-          </article>
+        <article class="card tall">
+          <img src="pp5.jpg" alt="Project 05">
+          <div class="caption">
+            <h3>Project 05</h3>
+            <p>Client or brief-led work, highlighting your contribution.</p>
+          </div>
+        </article>
 
-          <article class="card wide">
-            <img src="pp2.jpg" alt="Project 02">
-            <div class="caption">
-              <h3>Project 02</h3>
-              <p>Short description goes here: role + context + a crisp highlight (prototype, testing, or design intent).</p>
-            </div>
-          </article>
+        <article class="card square">
+          <img src="pp6.jpg" alt="Project 06">
+          <div class="caption">
+            <h3>Project 06</h3>
+            <p>Concept, exhibition, or research-driven project with a clear takeaway.</p>
+          </div>
+        </article>
 
-          <article class="card tall">
-            <img src="pp3.jpg" alt="Project 03">
-            <div class="caption">
-              <h3>Project 03</h3>
-              <p>Short description goes here: problem → approach → result. Keep it 1–2 lines max.</p>
-            </div>
-          </article>
+      </div>
+    </main>
 
-          <article class="card wide">
-            <img src="pp4.jpg" alt="Project 04">
-            <div class="caption">
-              <h3>Project 04</h3>
-              <p>Short description goes here: tool/process used (CAD, FEA, sketching) and what the viewer is seeing.</p>
-            </div>
-          </article>
-
-          <article class="card tall">
-            <img src="pp5.jpg" alt="Project 05">
-            <div class="caption">
-              <h3>Project 05</h3>
-              <p>Short description goes here: client/brief, your contribution, and the design decision you’re proud of.</p>
-            </div>
-          </article>
-
-          <article class="card square">
-            <img src="pp6.jpg" alt="Project 06">
-            <div class="caption">
-              <h3>Project 06</h3>
-              <p>Short description goes here: project type + impact. Mention exhibition, manufacturing, or usability if relevant.</p>
-            </div>
-          </article>
-
-        </div>
-      </main>
-
-    </section>
   </div>
 </body>
 </html>
