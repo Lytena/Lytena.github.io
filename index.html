@@ -66,26 +66,24 @@
       border-bottom-color:var(--accent);
     }
 
-    /* ===== Horizontal carousel ===== */
+    /* ===== Horizontal scroll section ===== */
     .carousel{
       margin-top:18px;
       border-top:1px solid var(--border);
       padding-top:22px;
     }
 
-    /* This is the actual scroll container */
     .track{
       display:flex;
       gap:24px;
-      overflow-x:auto;               /* ✅ horizontal scrolling */
+      overflow-x:auto;
       overflow-y:hidden;
       padding:6px 2px 18px;
-      scroll-snap-type:x mandatory;  /* ✅ snaps nicely */
+      scroll-snap-type:x mandatory;
       -webkit-overflow-scrolling:touch;
       scrollbar-gutter: stable both-edges;
     }
 
-    /* Visible scrollbar styling (works in most browsers) */
     .track::-webkit-scrollbar{ height:12px; }
     .track::-webkit-scrollbar-track{
       background:#f3f3f3;
@@ -100,11 +98,10 @@
       background:#bdbdbd;
     }
 
-    /* Each card has a fixed width so multiple exist “off-screen” */
     .card{
-      flex:0 0 360px;                /* ✅ controls card width in the scroll row */
-      min-width:360px;               /* ✅ ensures it doesn’t shrink */
-      scroll-snap-align:start;       /* ✅ snaps per card */
+      flex:0 0 360px;
+      min-width:360px;
+      scroll-snap-align:start;
       background:#fff;
       border:1px solid var(--border);
       border-radius:12px;
@@ -138,11 +135,9 @@
       color:var(--muted);
     }
 
-    /* Responsive: make cards smaller on phones */
     @media (max-width:720px){
       .wrap{ padding:26px 18px 50px; }
       .card{ flex-basis:82vw; min-width:82vw; }
-      .track{ padding-bottom:14px; }
     }
   </style>
 </head>
@@ -161,54 +156,113 @@
     </header>
 
     <main class="carousel">
-      <!-- ✅ This row will show a visible horizontal scrollbar that users can drag -->
-      <div class="track" aria-label="Selected works (scroll horizontally)">
+      <div class="track">
 
+        <!-- pp1 -->
         <article class="card">
           <img src="pp1.jpg" alt="Project 01">
           <div class="caption">
             <h3>Project 01</h3>
-            <p>Designed a clean, professional business card for Monash High Powered Rocketry, unifying brand identity, contact hierarchy, and aerospace-inspired graphics for sponsors and outreach.</p>
+            <p>Designed a clean, professional business card for Monash High Powered Rocketry, unifying brand identity and contact hierarchy.</p>
           </div>
         </article>
 
+        <!-- pp2 -->
         <article class="card">
           <img src="pp2.jpg" alt="Project 02">
           <div class="caption">
             <h3>Project 02</h3>
-            <p>Documented MHPR’s Showcase Night, capturing technical displays, sponsor engagement, and team culture while communicating progress, partnerships, and upcoming initiatives.</p>
+            <p>Documented MHPR’s Showcase Night, capturing technical displays, sponsor engagement, and team culture.</p>
           </div>
         </article>
 
+        <!-- pp3 -->
         <article class="card">
           <img src="pp3.jpg" alt="Project 03">
           <div class="caption">
             <h3>Project 03</h3>
-            <p>Captured MHPR’s Critical Design Review for Project Meridian, highlighting validation work, systems integration, and student-led ownership across airframe, payload, and propulsion.</p>
+            <p>Captured MHPR’s Critical Design Review for Project Meridian, highlighting validation and systems integration.</p>
           </div>
         </article>
 
+        <!-- pp4 -->
         <article class="card">
           <img src="pp4.jpg" alt="Project 04">
           <div class="caption">
             <h3>Project 04</h3>
-            <p>Developed the visual identity for Project Meridian through collaborative concept development with the team’s graphic designer, translating mission trajectory, form, and ambition into a bold 2026 campaign graphic.</p>
+            <p>Developed Project Meridian’s visual identity through collaborative concept development with the team’s graphic designer.</p>
           </div>
         </article>
 
+        <!-- pp5 -->
         <article class="card">
           <img src="pp5.jpg" alt="Project 05">
           <div class="caption">
             <h3>Project 05</h3>
-            <p>Early concept sketches exploring Daybreak’s form, proportions, and adesign intent through iterative ideation and visual refinement.</p>
+            <p>Early concept sketches exploring Daybreak’s form, proportions, and aerodynamic intent.</p>
           </div>
         </article>
 
+        <!-- pp6 -->
         <article class="card">
           <img src="pp6.jpg" alt="Project 06">
           <div class="caption">
             <h3>Project 06</h3>
-            <p>Concept illustration for Daybreak, expressing mission narrative</p>
+            <p>Concept illustration for Daybreak, expressing mission narrative and optimism through symbolic composition.</p>
+          </div>
+        </article>
+
+        <!-- pp7 -->
+        <article class="card">
+          <img src="pp7.jpg" alt="Project 07">
+          <div class="caption">
+            <h3>Project 07</h3>
+            <p>Brief description placeholder for future project documentation.</p>
+          </div>
+        </article>
+
+        <!-- pp8 -->
+        <article class="card">
+          <img src="pp8.jpg" alt="Project 08">
+          <div class="caption">
+            <h3>Project 08</h3>
+            <p>Brief description placeholder for future project documentation.</p>
+          </div>
+        </article>
+
+        <!-- pp9 -->
+        <article class="card">
+          <img src="pp9.jpg" alt="Project 09">
+          <div class="caption">
+            <h3>Project 09</h3>
+            <p>Brief description placeholder for future project documentation.</p>
+          </div>
+        </article>
+
+        <!-- pp10 -->
+        <article class="card">
+          <img src="pp10.jpg" alt="Project 10">
+          <div class="caption">
+            <h3>Project 10</h3>
+            <p>Brief description placeholder for future project documentation.</p>
+          </div>
+        </article>
+
+        <!-- pp11 -->
+        <article class="card">
+          <img src="pp11.jpg" alt="Project 11">
+          <div class="caption">
+            <h3>Project 11</h3>
+            <p>Brief description placeholder for future project documentation.</p>
+          </div>
+        </article>
+
+        <!-- pp12 -->
+        <article class="card">
+          <img src="pp12.jpg" alt="Project 12">
+          <div class="caption">
+            <h3>Project 12</h3>
+            <p>Brief description placeholder for future project documentation.</p>
           </div>
         </article>
 
