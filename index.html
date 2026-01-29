@@ -25,18 +25,17 @@
       color:var(--text);
       font-family:var(--font);
       letter-spacing:0.2px;
-      overflow-x:hidden; /* safety */
+      overflow-x:hidden;
     }
 
-    /* ✅ This creates equal whitespace left/right */
     .wrap{
-      width: min(1400px, 100%);
-      margin: 0 auto;                 /* centers -> equal sides */
-      padding: 32px 34px 60px;        /* your clean padding */
+      width:min(1200px, 100%);
+      margin:0 auto;
+      padding:32px 34px 60px;
     }
 
     header{
-      margin-bottom:36px;
+      margin-bottom:22px;
     }
 
     .brand{
@@ -67,16 +66,45 @@
       border-bottom-color:var(--accent);
     }
 
-    /* ✅ FORCE 3 columns (never 4) */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr)); /* exactly 3 */
-      gap:24px;
-      align-items:start;
+    /* ===== Horizontal carousel ===== */
+    .carousel{
+      margin-top:18px;
+      border-top:1px solid var(--border);
+      padding-top:22px;
     }
 
+    /* This is the actual scroll container */
+    .track{
+      display:flex;
+      gap:24px;
+      overflow-x:auto;               /* ✅ horizontal scrolling */
+      overflow-y:hidden;
+      padding:6px 2px 18px;
+      scroll-snap-type:x mandatory;  /* ✅ snaps nicely */
+      -webkit-overflow-scrolling:touch;
+      scrollbar-gutter: stable both-edges;
+    }
+
+    /* Visible scrollbar styling (works in most browsers) */
+    .track::-webkit-scrollbar{ height:12px; }
+    .track::-webkit-scrollbar-track{
+      background:#f3f3f3;
+      border-radius:999px;
+    }
+    .track::-webkit-scrollbar-thumb{
+      background:#cfcfcf;
+      border-radius:999px;
+      border:2px solid #f3f3f3;
+    }
+    .track::-webkit-scrollbar-thumb:hover{
+      background:#bdbdbd;
+    }
+
+    /* Each card has a fixed width so multiple exist “off-screen” */
     .card{
-      min-width:0;                    /* critical: prevents overflow */
+      flex:0 0 360px;                /* ✅ controls card width in the scroll row */
+      min-width:360px;               /* ✅ ensures it doesn’t shrink */
+      scroll-snap-align:start;       /* ✅ snaps per card */
       background:#fff;
       border:1px solid var(--border);
       border-radius:12px;
@@ -86,7 +114,7 @@
     .card img{
       width:100%;
       height:auto;
-      display:block;                  /* no cropping */
+      display:block;
     }
 
     .caption{
@@ -110,15 +138,11 @@
       color:var(--muted);
     }
 
-    /* ✅ Responsive: 2 columns */
-    @media (max-width:1100px){
-      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    /* ✅ Responsive: 1 column */
+    /* Responsive: make cards smaller on phones */
     @media (max-width:720px){
-      .wrap{ padding: 26px 18px 50px; }
-      .grid{ grid-template-columns: 1fr; }
+      .wrap{ padding:26px 18px 50px; }
+      .card{ flex-basis:82vw; min-width:82vw; }
+      .track{ padding-bottom:14px; }
     }
   </style>
 </head>
@@ -136,8 +160,9 @@
       </div>
     </header>
 
-    <main>
-      <div class="grid">
+    <main class="carousel">
+      <!-- ✅ This row will show a visible horizontal scrollbar that users can drag -->
+      <div class="track" aria-label="Selected works (scroll horizontally)">
 
         <article class="card">
           <img src="pp1.jpg" alt="Project 01">
@@ -167,7 +192,7 @@
           <img src="pp4.jpg" alt="Project 04">
           <div class="caption">
             <h3>Project 04</h3>
-            <p>Developed the visual identity for Project Meridian through collaborative concept development with the team’s graphic designer, translating mission trajectory, form, and ambition into a bold 2026 campaign graphic</p>
+            <p>Developed the visual identity for Project Meridian through collaborative concept development with the team’s graphic designer, translating mission trajectory, form, and ambition into a bold 2026 campaign graphic.</p>
           </div>
         </article>
 
@@ -193,4 +218,3 @@
   </div>
 </body>
 </html>
-
