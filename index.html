@@ -25,17 +25,19 @@
       color:var(--text);
       font-family:var(--font);
       letter-spacing:0.2px;
+      /* Vertical scroll only */
       overflow-x:hidden;
+      overflow-y:auto;
     }
 
     .wrap{
-      width:min(1200px, 100%);
+      width:min(980px, 100%);
       margin:0 auto;
-      padding:32px 34px 60px;
+      padding:32px 34px 70px;
     }
 
     header{
-      margin-bottom:22px;
+      margin-bottom:24px;
     }
 
     .brand{
@@ -47,64 +49,58 @@
     }
 
     .meta{
-      margin-top:10px;
+      margin-top:12px;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:10px;
       font-size:13px;
       color:var(--muted);
     }
 
     .meta a{
+      display:flex;
+      align-items:center;
+      gap:10px;
       color:var(--text);
       text-decoration:none;
       width:fit-content;
       border-bottom:1px solid transparent;
+      padding-bottom:2px;
     }
 
     .meta a:hover{
       border-bottom-color:var(--accent);
     }
 
-    /* ===== Horizontal scroll section ===== */
-    .carousel{
+    .meta a img{
+      width:15px;
+      height:15px;
+      object-fit:contain;
+      opacity:0.85;
+    }
+
+    .meta a:hover img{
+      opacity:1;
+    }
+
+    /* ===== Vertical, single-column gallery ===== */
+    main{
       margin-top:18px;
       border-top:1px solid var(--border);
       padding-top:22px;
     }
 
-    .track{
+    .list{
       display:flex;
-      gap:24px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      padding:6px 2px 18px;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-      scrollbar-gutter: stable both-edges;
-    }
-
-    .track::-webkit-scrollbar{ height:12px; }
-    .track::-webkit-scrollbar-track{
-      background:#f3f3f3;
-      border-radius:999px;
-    }
-    .track::-webkit-scrollbar-thumb{
-      background:#cfcfcf;
-      border-radius:999px;
-      border:2px solid #f3f3f3;
-    }
-    .track::-webkit-scrollbar-thumb:hover{
-      background:#bdbdbd;
+      flex-direction:column;
+      gap:22px;
     }
 
     .card{
-      flex:0 0 360px;
-      min-width:360px;
-      scroll-snap-align:start;
+      width:100%;
       background:#fff;
       border:1px solid var(--border);
-      border-radius:12px;
+      border-radius:14px;
       overflow:hidden;
     }
 
@@ -115,7 +111,7 @@
     }
 
     .caption{
-      padding:14px 14px 16px;
+      padding:16px 16px 18px;
       border-top:1px solid var(--border);
       background:#fff;
     }
@@ -130,14 +126,14 @@
 
     .caption p{
       margin:0;
-      font-size:12.5px;
-      line-height:1.55;
+      font-size:12.8px;
+      line-height:1.6;
       color:var(--muted);
     }
 
     @media (max-width:720px){
-      .wrap{ padding:26px 18px 50px; }
-      .card{ flex-basis:82vw; min-width:82vw; }
+      .wrap{ padding:26px 18px 60px; }
+      .caption{ padding:14px 14px 16px; }
     }
   </style>
 </head>
@@ -147,16 +143,23 @@
 
     <header>
       <div class="brand">Haruku Nishikawa</div>
+
       <div class="meta">
-        <a href="mailto:harukunishikawa@gmail.com">harukunishikawa@gmail.com</a>
-        <a href="https://www.linkedin.com/in/haruku-nishikawa-062474251" target="_blank" rel="noopener noreferrer">
+        <a href="mailto:harukunishikawa@gmail.com">
+          <img src="email-1-svgrepo-com.svg" alt="Email icon">
+          harukunishikawa@gmail.com
+        </a>
+
+        <a href="https://www.linkedin.com/in/haruku-nishikawa-062474251"
+           target="_blank" rel="noopener noreferrer">
+          <img src="InBug-Black.png" alt="LinkedIn logo">
           LinkedIn
         </a>
       </div>
     </header>
 
-    <main class="carousel">
-      <div class="track">
+    <main>
+      <section class="list">
 
         <!-- pp1 -->
         <article class="card">
@@ -266,7 +269,7 @@
           </div>
         </article>
 
-      </div>
+      </section>
     </main>
 
   </div>
