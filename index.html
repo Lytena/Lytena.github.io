@@ -10,6 +10,7 @@
       --text:#111;
       --muted:#666;
       --border:#e9e9e9;
+      --accent:#17c117;
       --bg:#fff;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
@@ -19,9 +20,11 @@
     html, body{
       margin:0;
       padding:0;
+      width:100%;
       background:var(--bg);
       color:var(--text);
       font-family:var(--font);
+      letter-spacing:0.2px;
       overflow-x:hidden;
     }
 
@@ -37,8 +40,9 @@
     .brand{
       font-size:22px;
       font-weight:800;
-      letter-spacing:0.8px;
       text-transform:uppercase;
+      letter-spacing:0.8px;
+      line-height:1.1;
     }
 
     .meta{
@@ -53,14 +57,23 @@
       display:flex;
       align-items:center;
       gap:10px;
-      text-decoration:none;
       color:var(--text);
+      text-decoration:none;
+      width:fit-content;
+      border-bottom:1px solid transparent;
+      padding-bottom:2px;
     }
+
+    .meta a:hover{ border-bottom-color:var(--accent); }
 
     .meta img{
       width:15px;
       height:15px;
+      object-fit:contain;
+      opacity:0.85;
     }
+
+    .meta a:hover img{ opacity:1; }
 
     /* ===== Feed ===== */
     main{
@@ -75,10 +88,11 @@
     }
 
     .card{
+      width:100%;
+      background:#fff;
       border:1px solid var(--border);
       border-radius:14px;
       overflow:hidden;
-      background:#fff;
     }
 
     .media{
@@ -87,20 +101,22 @@
       border:0;
     }
 
-    .media--video{
-      aspect-ratio:16 / 9;
-    }
+    .media--img{ height:auto; }
+
+    .media--video{ aspect-ratio:16 / 9; }
 
     .caption{
       padding:16px 16px 18px;
       border-top:1px solid var(--border);
+      background:#fff;
     }
 
     .caption h3{
       margin:0 0 6px;
-      font-size:14px;
-      font-weight:800; /* like モナッシュ大学 学生ロケットチーム */
-      letter-spacing:0.4px;
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
     }
 
     .caption p{
@@ -112,85 +128,143 @@
 
     @media (max-width:720px){
       .wrap{ padding:26px 18px 70px; }
+      .caption{ padding:14px 14px 16px; }
     }
   </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <header>
-    <div class="brand">Haruku Nishikawa</div>
-    <div class="meta">
-      <a href="mailto:harukunishikawa@gmail.com">
-        <img src="email-1-svgrepo-com.svg" alt="">
-        harukunishikawa@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/haruku-nishikawa-062474251" target="_blank">
-        <img src="InBug-Black.png" alt="">
-        LinkedIn
-      </a>
-    </div>
-  </header>
+    <header>
+      <div class="brand">Haruku Nishikawa</div>
 
-  <main>
-    <section class="list">
+      <div class="meta">
+        <a href="mailto:harukunishikawa@gmail.com">
+          <img src="email-1-svgrepo-com.svg" alt="Email icon">
+          harukunishikawa@gmail.com
+        </a>
 
-      <!-- Video -->
-      <article class="card">
-        <iframe
-          class="media media--video"
-          src="https://drive.google.com/file/d/1Q0_N5UrwFd-AU8JL0HzKU09iLms2KjMT/preview"
-          allow="autoplay">
-        </iframe>
-        <div class="caption">
-          <h3>Monash High Powered Rocketry</h3>
-          <p>Designed a clean, professional business card system to unify brand identity and contact hierarchy.</p>
-        </div>
-      </article>
+        <a href="https://www.linkedin.com/in/haruku-nishikawa-062474251" target="_blank" rel="noopener noreferrer">
+          <img src="InBug-Black.png" alt="LinkedIn logo">
+          LinkedIn
+        </a>
+      </div>
+    </header>
 
-      <!-- kk2 -->
-      <article class="card">
-        <img class="media" src="kk2.jpg">
-        <div class="caption">
-          <h3>MHPR Showcase Night</h3>
-          <p>Documented technical displays, sponsor engagement, and team culture during the annual showcase event.</p>
-        </div>
-      </article>
+    <main>
+      <section class="list">
 
-      <!-- kk3 -->
-      <article class="card">
-        <img class="media" src="kk3.jpg">
-        <div class="caption">
-          <h3>Critical Design Review — Project Meridian</h3>
-          <p>Captured formal validation, systems integration, and interdisciplinary review processes.</p>
-        </div>
-      </article>
+        <!-- Project 01 (video) -->
+        <article class="card">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/1Q0_N5UrwFd-AU8JL0HzKU09iLms2KjMT/preview"
+            allow="autoplay"
+            title="Project 01 Video">
+          </iframe>
 
-      <!-- kk4 -->
-      <article class="card">
-        <img class="media" src="kk4.jpg">
-        <div class="caption">
-          <h3>Visual Identity Development</h3>
-          <p>Collaborated with the team’s graphic designer on concept development and branding direction.</p>
-        </div>
-      </article>
+          <div class="caption">
+            <h3>Project 01</h3>
+            <p>国際学生ロケット大会 International Rocket Engineering Competition (IREC) に向けて設計・製作され、アメリカでの実機飛行を達成した10000ft高度ロケット。</p>
+          </div>
+        </article>
 
-      <!-- kk5 -->
-      <article class="card">
-        <img class="media" src="kk5.jpg">
-        <div class="caption">
-          <h3>Daybreak — Early Form Studies</h3>
-          <p>Exploratory sketches investigating proportion, surface language, and aerodynamic intent.</p>
-        </div>
-      </article>
+        <!-- kk2 -->
+        <article class="card">
+          <img class="media media--img" src="kk2.jpg" alt="Project 02">
+          <div class="caption"><h3>Project 02</h3><p>モナッシュ大学　学生ロケットチーム
+約120名が所属し、設計・製造・試験・運用を学生が一貫して担う豪州屈指の学生ロケットチームにおいて、ビジネスマネジメントを軸に、資金調達、設計支援、ロジスティクス、広報、ブランディングを横断的に担当。
+</p></div>
+        </article>
 
-      <!-- Continue same pattern for kk6–kk20 -->
+        <!-- kk3 -->
+        <article class="card">
+          <img class="media media--img" src="kk3.jpg" alt="Project 03">
+          <div class="caption"><h3>Project 03</h3><p>資金調達・現物提供（ANSYS SOFTWARE)
+スポンサー企業よりインカインド提供を受けた ANSYS を用いて、CFD・FEA解析を実施。</p></div>
+        </article>
 
-    </section>
-  </main>
+        <!-- kk4 -->
+        <article class="card">
+          <img class="media media--img" src="kk4.jpg" alt="Project 04">
+          <div class="caption"><h3>ビジネスマネジメント
+OB・OGネットワークやショーケースイベントでの対外説明を通じ、単発に終わらない継続的な支援基盤を確立。
+</p></div>
+        </article>
 
-</div>
+        <!-- kk5 -->
+        <article class="card">
+          <img class="media media--img" src="kk5.jpg" alt="Project 05">
+          <div class="caption"><h3>Project 05</h3><p>プロジェクト名「DAYBREAK（夜明け）」。  世界大会に出場する高度約30,000 ftの学生ロケット機体外装のデザインを担当。  夜明けをコンセプトに、太陽をイメージさせるノーズコーンと機体配色を検討。</p></div>
+        </article>
+
+        <!-- kk6 -->
+        <article class="card">
+          <img class="media media--img" src="kk6.jpg" alt="Project 06">
+          <div class="caption"><h3>Project 06</h3><p>試験プロセスの可視化と体系化
+ 燃焼試験やPODS・BUSSS試験の様子をメディア記録として集約。手順や事象を誰もが理解できるよう整理し、学生組織で課題となりがちな技術ノウハウの言語化と継承の仕組みを改善。
+</p></div>
+        </article>
+
+        <!-- kk7 -->
+        <article class="card">
+          <img class="media media--img" src="kk7.jpg" alt="Project 07">
+          <div class="caption"><h3>Project 07</h3><p>安全管理とリスク対応実務
+推進系ホットファイア試験における安全管理に従事。実際に成立させるための運用視点を実務を通じて習得。
+</p></div>
+        </article>
+
+        <!-- kk8 -->
+        <article class="card">
+          <img class="media media--img" src="kk8.jpg" alt="Project 08">
+          <div class="caption"><h3>Project 08</h3><p>コミュニケーションデザイン
+学生チームとしての信頼性向上を目的に、名刺から対外資料まで一貫したビジュアルデザインを主導。</p></div>
+        </article>
+
+        <!-- kk9 -->
+        <article class="card">
+          <img class="media media--img" src="kk9.jpg" alt="Project 09">
+          <div class="caption"><h3>Project 09</h3><p>ブランディング
+スポンサーおよび大学のブランドガイドラインを遵守しつつ、チームのカラーパレットとビジュアルルールを整理・改善。</p></div>
+        </article>
+
+        <!-- kk10 -->
+        <article class="card">
+          <img class="media media--img" src="kk10.jpg" alt="Project 10">
+          <div class="caption"><h3>Project 10</h3><p>Yarra Valley Railway｜エンジニアリング経験  パンドロール（Pandrol）固定作業に従事し、鉄道の現場運用と安全手順を実務をボランティア活動を通じて習得。</p></div>
+        </article>
+
+        <!-- kk11 -->
+        <article class="card">
+          <img class="media media--img" src="kk11.jpg" alt="Project 11">
+          <div class="caption"><h3>Project 11</h3><p>Steamrail Victoria｜エンジニアリング経験
+保存蒸気機関車の整備補助および清掃作業に従事し、扉機構など可動部の異物除去や機能回復を支援。</p></div>
+        </article>
+
+        <!-- kk12 -->
+        <article class="card">
+          <img class="media media--img" src="kk12.jpg" alt="Project 12">
+          <div class="caption"><h3>Project 12</h3><p>モナッシュ大学　掘削機チーム  マイクロTBMの構造設計において、複数コンセプトの比較検討から3Dプリントによる試作を担当。</p></div>
+        </article>
+
+        <!-- kk13 -->
+        <article class="card">
+          <img class="media media--img" src="kk13.jpg" alt="Project 13">
+          <div class="caption"><h3>Project 13</h3><p>卒業制作（インダストリアルデザイン）｜サステナビリティ × 鉄道インフラ  飛行機と比較して約7倍高いサステナビリティを持つ高速鉄道に着目し、社会実装を前提とした持続可能なオーストラリア高速鉄道インフラのデザインを提案。</p></div>
+        </article>
+
+        <!-- kk14 -->
+        <article class="card">
+          <img class="media media--img" src="kk14.jpg" alt="Project 14">
+          <div class="caption"><h3>Project 14</h3><p>家庭教師 大学入試および高校入試を控えた生徒を対象に、日本語・英語のバイリンガル環境での個別指導。
+
+ 一人ひとりに合わせたサポート： 各学校の入試の傾向を分析し、数学・英語・物理を中心に、生徒一人ひとりの苦手や得意に合わせた合格までの専用プランを作成。</p></div>
+        </article>
+
+      </section>
+    </main>
+
+  </div>
 </body>
 </html>
-
