@@ -71,6 +71,7 @@
       height:15px;
       object-fit:contain;
       opacity:0.85;
+      display:block;
     }
 
     .meta a:hover img{ opacity:1; }
@@ -103,7 +104,10 @@
 
     .media--img{ height:auto; }
 
-    .media--video{ aspect-ratio:16 / 9; }
+    .media--video{
+      aspect-ratio:16 / 9;
+      width:100%;
+    }
 
     .caption{
       padding:16px 16px 18px;
@@ -124,6 +128,7 @@
       font-size:12.8px;
       line-height:1.6;
       color:var(--muted);
+      white-space:pre-line; /* keeps your line breaks (like tutoring section) */
     }
 
     @media (max-width:720px){
@@ -161,7 +166,8 @@
             class="media media--video"
             src="https://drive.google.com/file/d/1Q0_N5UrwFd-AU8JL0HzKU09iLms2KjMT/preview"
             allow="autoplay"
-            title="Project 01 Video">
+            title="Project 01 Video"
+            loading="lazy">
           </iframe>
 
           <div class="caption">
@@ -172,95 +178,121 @@
 
         <!-- kk2 -->
         <article class="card">
-          <img class="media media--img" src="kk2.jpg" alt="モナッシュ大学　学生ロケットチーム">
-          <div class="caption"><h3>モナッシュ大学　学生ロケットチーム</h3><p>
-約120名が所属し、設計・製造・試験・運用を学生が一貫して担う豪州屈指の学生ロケットチームにおいて、ビジネスマネジメントを軸に、資金調達、設計支援、ロジスティクス、広報、ブランディングを横断的に担当。
-</p></div>
+          <img class="media media--img" src="kk2.jpg" alt="モナッシュ大学　学生ロケットチーム" loading="lazy">
+          <div class="caption">
+            <h3>モナッシュ大学　学生ロケットチーム</h3>
+            <p>約120名が所属し、設計・製造・試験・運用を学生が一貫して担う豪州屈指の学生ロケットチームにおいて、ビジネスマネジメントを軸に、資金調達、設計支援、ロジスティクス、広報、ブランディングを横断的に担当。</p>
+          </div>
         </article>
 
         <!-- kk3 -->
         <article class="card">
-          <img class="media media--img" src="kk3.jpg" alt="Project 03">
-          <div class="caption"><h3>資金調達・現物提供</h3><p>
-スポンサー企業よりインカインド提供を受けた ANSYS を用いて、CFD・FEA解析を実施。</p></div>
+          <img class="media media--img" src="kk3.jpg" alt="資金調達・現物提供" loading="lazy">
+          <div class="caption">
+            <h3>資金調達・現物提供</h3>
+            <p>スポンサー企業よりインカインド提供を受けた ANSYS を用いて、CFD・FEA解析を実施。</p>
+          </div>
         </article>
 
         <!-- kk4 -->
         <article class="card">
-          <img class="media media--img" src="kk4.jpg" alt="Project 04">
-           <div class="caption"><h3>ビジネスマネジメント</h3><p>
- <div class="caption"><h3>ビジネスマネジメント</h3><p>
-OB・OGネットワークやショーケースイベントでの対外説明を通じ、単発に終わらない継続的な支援基盤を確立。
-</p></div>。</p></div>
-        </article>。</p></div>
+          <img class="media media--img" src="kk4.jpg" alt="ビジネスマネジメント" loading="lazy">
+          <div class="caption">
+            <h3>ビジネスマネジメント</h3>
+            <p>OB・OGネットワークやショーケースイベントでの対外説明を通じ、単発に終わらない継続的な支援基盤を確立。</p>
+          </div>
+        </article>
 
         <!-- kk5 -->
         <article class="card">
-          <img class="media media--img" src="kk5.jpg" alt="Project 05">
-          <div class="caption"><h3>機体外装デザイン</h3><p>プロジェクト名「DAYBREAK（夜明け）」。  世界大会に出場する高度約30,000 ftの学生ロケット機体外装のデザインを担当。夜明けをコンセプトに、太陽をイメージさせるノーズコーンと機体配色を検討。</p></div>
+          <img class="media media--img" src="kk5.jpg" alt="機体外装デザイン" loading="lazy">
+          <div class="caption">
+            <h3>機体外装デザイン</h3>
+            <p>プロジェクト名「DAYBREAK（夜明け）」。世界大会に出場する高度約30,000 ftの学生ロケット機体外装のデザインを担当。夜明けをコンセプトに、太陽をイメージさせるノーズコーンと機体配色を検討。</p>
+          </div>
         </article>
 
         <!-- kk6 -->
         <article class="card">
-          <img class="media media--img" src="kk6.jpg" alt="Project 06">
-          <div class="caption"><h3>試験プロセスの可視化と体系化</h3><p>
-燃焼試験やPODS・BUSSS試験の様子をメディア記録として集約。手順や事象を誰もが理解できるよう整理し、学生組織で課題となりがちな技術ノウハウの言語化と継承の仕組みを改善。
-</p></div>
+          <img class="media media--img" src="kk6.jpg" alt="試験プロセスの可視化と体系化" loading="lazy">
+          <div class="caption">
+            <h3>試験プロセスの可視化と体系化</h3>
+            <p>燃焼試験やPODS・BUSSS試験の様子をメディア記録として集約。手順や事象を誰もが理解できるよう整理し、学生組織で課題となりがちな技術ノウハウの言語化と継承の仕組みを改善。</p>
+          </div>
         </article>
 
         <!-- kk7 -->
         <article class="card">
-          <img class="media media--img" src="kk7.jpg" alt="Project 07">
-          <div class="caption"><h3>全管理とリスク対応実務</h3><p>
-推進系ホットファイア試験における安全管理に従事。実際に成立させるための運用視点を実務を通じて習得。
-</p></div>
+          <img class="media media--img" src="kk7.jpg" alt="安全管理とリスク対応実務" loading="lazy">
+          <div class="caption">
+            <h3>安全管理とリスク対応実務</h3>
+            <p>推進系ホットファイア試験における安全管理に従事。実際に成立させるための運用視点を実務を通じて習得。</p>
+          </div>
         </article>
 
         <!-- kk8 -->
         <article class="card">
-          <img class="media media--img" src="kk8.jpg" alt="Project 08">
-          <div class="caption"><h3>コミュニケーションデザイン</h3><p>
-学生チームとしての信頼性向上を目的に、名刺から対外資料まで一貫したビジュアルデザインを主導。</p></div>
+          <img class="media media--img" src="kk8.jpg" alt="コミュニケーションデザイン" loading="lazy">
+          <div class="caption">
+            <h3>コミュニケーションデザイン</h3>
+            <p>学生チームとしての信頼性向上を目的に、名刺から対外資料まで一貫したビジュアルデザインを主導。</p>
+          </div>
         </article>
 
         <!-- kk9 -->
         <article class="card">
-          <img class="media media--img" src="kk9.jpg" alt="Project 09">
-          <div class="caption"><h3>ブランディング</h3><p>
-スポンサーおよび大学のブランドガイドラインを遵守しつつ、チームのカラーパレットとビジュアルルールを整理・改善。</p></div>
+          <img class="media media--img" src="kk9.jpg" alt="ブランディング" loading="lazy">
+          <div class="caption">
+            <h3>ブランディング</h3>
+            <p>スポンサーおよび大学のブランドガイドラインを遵守しつつ、チームのカラーパレットとビジュアルルールを整理・改善。</p>
+          </div>
         </article>
 
         <!-- kk10 -->
         <article class="card">
-          <img class="media media--img" src="kk10.jpg" alt="Project 10">
-          <div class="caption"><h3>Yarra Valley Railway｜エンジニアリング経験</h3><p>パンドロール（Pandrol）固定作業に従事し、鉄道の現場運用と安全手順を実務をボランティア活動を通じて習得。</p></div>
+          <img class="media media--img" src="kk10.jpg" alt="Yarra Valley Railway｜エンジニアリング経験" loading="lazy">
+          <div class="caption">
+            <h3>Yarra Valley Railway｜エンジニアリング経験</h3>
+            <p>パンドロール（Pandrol）固定作業に従事し、鉄道の現場運用と安全手順をボランティア活動を通じて習得。</p>
+          </div>
         </article>
 
         <!-- kk11 -->
         <article class="card">
-          <img class="media media--img" src="kk11.jpg" alt="Project 11">
-          <div class="caption"><h3>Steamrail Victoria｜エンジニアリング経験</h3><p>
-保存蒸気機関車の整備補助および清掃作業に従事し、扉機構など可動部の異物除去や機能回復を支援。</p></div>
+          <img class="media media--img" src="kk11.jpg" alt="Steamrail Victoria｜エンジニアリング経験" loading="lazy">
+          <div class="caption">
+            <h3>Steamrail Victoria｜エンジニアリング経験</h3>
+            <p>保存蒸気機関車の整備補助および清掃作業に従事し、扉機構など可動部の異物除去や機能回復を支援。</p>
+          </div>
         </article>
 
         <!-- kk12 -->
         <article class="card">
-          <img class="media media--img" src="kk12.jpg" alt="Project 12">
-          <div class="caption"><h3>モナッシュ大学　掘削機チーム</h3><p>マイクロTBMの構造設計において、複数コンセプトの比較検討から3Dプリントによる試作を担当。</p></div>
+          <img class="media media--img" src="kk12.jpg" alt="モナッシュ大学　掘削機チーム" loading="lazy">
+          <div class="caption">
+            <h3>モナッシュ大学　掘削機チーム</h3>
+            <p>マイクロTBMの構造設計において、複数コンセプトの比較検討から3Dプリントによる試作を担当。</p>
+          </div>
         </article>
 
         <!-- kk13 -->
         <article class="card">
-          <img class="media media--img" src="kk13.jpg" alt="Project 13">
-          <div class="caption"><h3>卒業制作（インダストリアルデザイン）</h3><p> 飛行機と比較して約7倍高いサステナビリティを持つ高速鉄道に着目し、社会実装を前提とした持続可能なオーストラリア高速鉄道インフラのデザインを提案。</p></div>
+          <img class="media media--img" src="kk13.jpg" alt="卒業制作（インダストリアルデザイン）" loading="lazy">
+          <div class="caption">
+            <h3>卒業制作（インダストリアルデザイン）</h3>
+            <p>飛行機と比較して約7倍高いサステナビリティを持つ高速鉄道に着目し、社会実装を前提とした持続可能なオーストラリア高速鉄道インフラのデザインを提案。</p>
+          </div>
         </article>
 
         <!-- kk14 -->
         <article class="card">
-          <img class="media media--img" src="kk14.jpg" alt="Project 14">
-          <div class="caption"><h3>家庭教師 </h3><p>大学入試および高校入試を控えた生徒を対象に、日本語・英語のバイリンガル環境での個別指導。
+          <img class="media media--img" src="kk14.jpg" alt="家庭教師" loading="lazy">
+          <div class="caption">
+            <h3>家庭教師</h3>
+            <p>大学入試および高校入試を控えた生徒を対象に、日本語・英語のバイリンガル環境での個別指導。
 
- 一人ひとりに合わせたサポート： 各学校の入試の傾向を分析し、数学・英語・物理を中心に、生徒一人ひとりの苦手や得意に合わせた合格までの専用プランを作成。</p></div>
+一人ひとりに合わせたサポート：各学校の入試の傾向を分析し、数学・英語・物理を中心に、生徒一人ひとりの苦手や得意に合わせた合格までの専用プランを作成。</p>
+          </div>
         </article>
 
       </section>
