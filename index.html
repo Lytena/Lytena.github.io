@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,10 +102,20 @@
       overflow:hidden;
     }
 
-    .card img{
+    /* Media (image/video) */
+    .media{
       width:100%;
-      height:auto;
       display:block;
+      border:0;
+    }
+
+    .media--img{
+      height:auto;
+    }
+
+    /* Responsive video sizing */
+    .media--video{
+      aspect-ratio:16 / 9;
     }
 
     .caption{
@@ -158,9 +169,15 @@
     <main>
       <section class="list">
 
-        <!-- pp1 -->
+        <!-- pp1 (VIDEO EMBED) -->
         <article class="card">
-          <img src="pp1.jpg" alt="Project 01">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/1Q0_N5UrwFd-AU8JL0HzKU09iLms2KjMT/preview"
+            allow="autoplay"
+            title="Project 01 Video">
+          </iframe>
+
           <div class="caption">
             <h3>Project 01</h3>
             <p>Designed a clean, professional business card for Monash High Powered Rocketry, unifying brand identity and contact hierarchy.</p>
@@ -169,7 +186,7 @@
 
         <!-- pp2 -->
         <article class="card">
-          <img src="pp2.jpg" alt="Project 02">
+          <img class="media media--img" src="pp2.jpg" alt="Project 02">
           <div class="caption">
             <h3>Project 02</h3>
             <p>Documented MHPR’s Showcase Night, capturing technical displays, sponsor engagement, and team culture.</p>
@@ -178,7 +195,7 @@
 
         <!-- pp3 -->
         <article class="card">
-          <img src="pp3.jpg" alt="Project 03">
+          <img class="media media--img" src="pp3.jpg" alt="Project 03">
           <div class="caption">
             <h3>Project 03</h3>
             <p>Captured MHPR’s Critical Design Review for Project Meridian, highlighting validation and systems integration.</p>
@@ -187,7 +204,7 @@
 
         <!-- pp4 -->
         <article class="card">
-          <img src="pp4.jpg" alt="Project 04">
+          <img class="media media--img" src="pp4.jpg" alt="Project 04">
           <div class="caption">
             <h3>Project 04</h3>
             <p>Developed Project Meridian’s visual identity through collaborative concept development with the team’s graphic designer.</p>
@@ -196,7 +213,7 @@
 
         <!-- pp5 -->
         <article class="card">
-          <img src="pp5.jpg" alt="Project 05">
+          <img class="media media--img" src="pp5.jpg" alt="Project 05">
           <div class="caption">
             <h3>Project 05</h3>
             <p>Early concept sketches exploring Daybreak’s form, proportions, and aerodynamic intent.</p>
@@ -205,7 +222,7 @@
 
         <!-- pp6 -->
         <article class="card">
-          <img src="pp6.jpg" alt="Project 06">
+          <img class="media media--img" src="pp6.jpg" alt="Project 06">
           <div class="caption">
             <h3>Project 06</h3>
             <p>Concept illustration for Daybreak, expressing mission narrative and optimism through symbolic composition.</p>
@@ -214,7 +231,7 @@
 
         <!-- pp7 -->
         <article class="card">
-          <img src="pp7.jpg" alt="Project 07">
+          <img class="media media--img" src="pp7.jpg" alt="Project 07">
           <div class="caption">
             <h3>Project 07</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -223,7 +240,7 @@
 
         <!-- pp8 -->
         <article class="card">
-          <img src="pp8.jpg" alt="Project 08">
+          <img class="media media--img" src="pp8.jpg" alt="Project 08">
           <div class="caption">
             <h3>Project 08</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -232,7 +249,7 @@
 
         <!-- pp9 -->
         <article class="card">
-          <img src="pp9.jpg" alt="Project 09">
+          <img class="media media--img" src="pp9.jpg" alt="Project 09">
           <div class="caption">
             <h3>Project 09</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -241,7 +258,7 @@
 
         <!-- pp10 -->
         <article class="card">
-          <img src="pp10.jpg" alt="Project 10">
+          <img class="media media--img" src="pp10.jpg" alt="Project 10">
           <div class="caption">
             <h3>Project 10</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -250,7 +267,7 @@
 
         <!-- pp11 -->
         <article class="card">
-          <img src="pp11.jpg" alt="Project 11">
+          <img class="media media--img" src="pp11.jpg" alt="Project 11">
           <div class="caption">
             <h3>Project 11</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -259,7 +276,7 @@
 
         <!-- pp12 -->
         <article class="card">
-          <img src="pp12.jpg" alt="Project 12">
+          <img class="media media--img" src="pp12.jpg" alt="Project 12">
           <div class="caption">
             <h3>Project 12</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -268,7 +285,7 @@
 
         <!-- pp13 -->
         <article class="card">
-          <img src="pp13.jpg" alt="Project 13">
+          <img class="media media--img" src="pp13.jpg" alt="Project 13">
           <div class="caption">
             <h3>Project 13</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -277,7 +294,7 @@
 
         <!-- pp14 -->
         <article class="card">
-          <img src="pp14.jpg" alt="Project 14">
+          <img class="media media--img" src="pp14.jpg" alt="Project 14">
           <div class="caption">
             <h3>Project 14</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -286,7 +303,7 @@
 
         <!-- pp15 -->
         <article class="card">
-          <img src="pp15.jpg" alt="Project 15">
+          <img class="media media--img" src="pp15.jpg" alt="Project 15">
           <div class="caption">
             <h3>Project 15</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -295,7 +312,7 @@
 
         <!-- pp16 -->
         <article class="card">
-          <img src="pp16.jpg" alt="Project 16">
+          <img class="media media--img" src="pp16.jpg" alt="Project 16">
           <div class="caption">
             <h3>Project 16</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -304,7 +321,7 @@
 
         <!-- pp17 -->
         <article class="card">
-          <img src="pp17.jpg" alt="Project 17">
+          <img class="media media--img" src="pp17.jpg" alt="Project 17">
           <div class="caption">
             <h3>Project 17</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -313,7 +330,7 @@
 
         <!-- pp18 -->
         <article class="card">
-          <img src="pp18.jpg" alt="Project 18">
+          <img class="media media--img" src="pp18.jpg" alt="Project 18">
           <div class="caption">
             <h3>Project 18</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -322,7 +339,7 @@
 
         <!-- pp19 -->
         <article class="card">
-          <img src="pp19.jpg" alt="Project 19">
+          <img class="media media--img" src="pp19.jpg" alt="Project 19">
           <div class="caption">
             <h3>Project 19</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -331,7 +348,7 @@
 
         <!-- pp20 -->
         <article class="card">
-          <img src="pp20.jpg" alt="Project 20">
+          <img class="media media--img" src="pp20.jpg" alt="Project 20">
           <div class="caption">
             <h3>Project 20</h3>
             <p>Brief description placeholder for future project documentation.</p>
@@ -344,4 +361,5 @@
   </div>
 </body>
 </html>
+```
 
