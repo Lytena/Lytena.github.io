@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haruku Nishikawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -12,7 +15,9 @@
       --border:#e9e9e9;
       --accent:#17c117;
       --bg:#fff;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --font: 'IBM Plex Sans', 'IBM Plex Sans JP', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --ja: 'IBM Plex Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
     }
 
     *{ box-sizing:border-box; }
@@ -38,14 +43,16 @@
     header{ margin-bottom:28px; }
 
     .brand{
+      font-family:var(--mono);
       font-size:22px;
-      font-weight:800;
+      font-weight:600;
       text-transform:uppercase;
       letter-spacing:0.8px;
       line-height:1.1;
     }
 
     .meta{
+      font-family:var(--mono);
       margin-top:12px;
       display:flex;
       flex-direction:column;
@@ -130,9 +137,10 @@
     }
 
     .caption h3{
-      margin:0 0 6px;
-      font-size:13px;
-      font-weight:800;
+      font-family:var(--mono);
+      margin:0 0 8px;
+      font-size:12.5px;
+      font-weight:600;
       text-transform:uppercase;
       letter-spacing:0.6px;
     }
@@ -142,6 +150,14 @@
       font-size:12.8px;
       line-height:1.6;
       color:var(--muted);
+    }
+
+    .caption p.ja{
+      margin-top:8px;
+      font-family:var(--ja);
+      font-size:12.3px;
+      line-height:1.8;
+      letter-spacing:0.3px;
     }
 
     @media (max-width:720px){
@@ -186,6 +202,7 @@
           <div class="caption">
             <h3>Project Meridian | Monash High Powered Rocketry</h3>
             <p>Launch of Project Meridian, a student-developed 10,000 ft hybrid rocket for AURC 2026. I manufactured the fibreglass tube couplers and carbon-fibre fin wrap, and produced the livery with vinyl cutting.</p>
+            <p class="ja" lang="ja">AURC 2026に向けて学生が開発した高度10,000 ftのハイブリッドロケット「Project Meridian」の打上げ。ガラス繊維製チューブカプラーとカーボンファイバー製フィンラップの製作、カッティングシートによる機体リバリーを担当。</p>
           </div>
         </article>
 
@@ -202,6 +219,7 @@
           <div class="caption">
             <h3>Tripoli Level 1 Certification Rocket</h3>
             <p>My scratch-built high-power rocket, designed, simulated and manufactured solo, including a parametric nose cone and custom parachute. It flew to 2,700 ft and was recovered intact.</p>
+            <p class="ja" lang="ja">設計・シミュレーション・製作をすべて一人で行った自作ハイパワーロケット。パラメトリック設計のノーズコーンと自作パラシュートを搭載し、高度2,700 ftまで飛行、無傷で回収に成功。</p>
           </div>
         </article>
 
@@ -218,6 +236,7 @@
           <div class="caption">
             <h3>Tripoli Level 2 Certification Attempt</h3>
             <p>Launch of my scratch-built L2 rocket on a J250W motor, simulated to a 4,100 ft apogee. The parachute deployed in sight, but tall crops and strong wind meant it was never recovered despite 11 hours of searching.</p>
+            <p class="ja" lang="ja">J250Wモーターを搭載した自作L2ロケットの打上げ（シミュレーション上の最高到達高度4,100 ft）。パラシュートの展開は確認できたものの、背の高い作物と強風により、11時間の捜索でも回収には至らなかった。</p>
           </div>
         </article>
 
@@ -229,6 +248,7 @@
           <div class="caption">
             <h3>L2 | The Build</h3>
             <p>On the pad before the flight: fibreglass airframe, birch plywood fins with a carbon-fibre fin wrap, and an epoxy-coated PLA nose cone carrying a screamer.</p>
+            <p class="ja" lang="ja">打上げ前の射点にて。ガラス繊維製の機体、カーボンファイバーでラップしたバーチ合板フィン、スクリーマーを内蔵したエポキシコーティングのPLA製ノーズコーン。</p>
           </div>
         </article>
 
@@ -241,10 +261,9 @@
           <div class="caption">
             <h3>Yarra Valley Railway | Track Maintenance Volunteer</h3>
             <p>I volunteer on track maintenance, including rail positioning, Pandrol clip installation and thermite welding rail joints on site alongside experienced tradespeople.</p>
+            <p class="ja" lang="ja">線路保守のボランティアとして、経験豊富な職人とともにレールの位置調整、パンドロールクリップの取付け、テルミット溶接によるレール接合を現場で行っている。</p>
           </div>
         </article>
-
-
 
       </section>
     </main>
