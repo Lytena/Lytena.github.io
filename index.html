@@ -109,6 +109,18 @@
       width:100%;
     }
 
+    .pair{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2px;
+      background:var(--border);
+    }
+
+    .pair .media{
+      height:100%;
+      object-fit:cover;
+    }
+
     .caption{
       padding:16px 16px 18px;
       border-top:1px solid var(--border);
@@ -171,7 +183,7 @@
           </iframe>
           <div class="caption">
             <h3>Project Meridian | Monash High Powered Rocketry</h3>
-            <p>Launch of Project Meridian, a student-developed 10,000 ft hybrid rocket for AURC 2026. I manufactured its flight-critical carbon-fibre and fibreglass fins, couplers and airframe sections.</p>
+            <p>Launch of Project Meridian, a student-developed 10,000 ft hybrid rocket for AURC 2026. I manufactured the fibreglass tube couplers and carbon-fibre fin wrap, and produced the livery with vinyl cutting.</p>
           </div>
         </article>
 
@@ -190,6 +202,43 @@
             <p>My scratch-built high-power rocket, designed, simulated and manufactured solo, including a parametric nose cone and custom parachute. It flew to 2,700 ft and was recovered intact.</p>
           </div>
         </article>
+
+        <!-- L2 certification launch -->
+        <article class="card">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            title="Tripoli Level 2 certification launch video"
+            loading="lazy">
+          </iframe>
+          <div class="caption">
+            <h3>Tripoli Level 2 Certification Attempt</h3>
+            <p>Launch of my scratch-built L2 rocket on a J250W motor, simulated to a 4,100 ft apogee. The parachute deployed in sight, but tall crops and strong wind meant it was never recovered despite 11 hours of searching.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="pair">
+            <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
+            <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
+          </div>
+          <div class="caption">
+            <h3>L2 | The Build</h3>
+            <p>On the pad before the flight: fibreglass airframe, birch plywood fins with a carbon-fibre fin wrap, and an epoxy-coated PLA nose cone carrying a screamer.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="media media--img" src="l2-search-map.jpg" alt="Annotated search map of the L2 rocket recovery" loading="lazy">
+          <div class="caption">
+            <h3>L2 | Search Map</h3>
+            <p>The recovery map I made from the last-seen location, an interpolated flight line and wind drift. Lesson learned: never fly an L2 without a GPS tracker.</p>
+          </div>
+        </article>
+
+
 
       </section>
     </main>
