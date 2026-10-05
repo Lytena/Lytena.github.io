@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haruku Nishikawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --text:#111;
+      --muted:#666;
+      --border:#e9e9e9;
+      --accent:#17c117;
+      --bg:#fff;
+      --font: 'IBM Plex Sans', 'IBM Plex Sans JP', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --ja: 'IBM Plex Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html, body{
+      margin:0;
+      padding:0;
+      width:100%;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      letter-spacing:0.2px;
+      overflow-x:hidden;
+    }
+
+    .wrap{
+      width:min(980px, 100%);
+      margin:0 auto;
+      padding:32px 34px 80px;
+    }
+
+    /* ===== Header ===== */
+    header{ margin-bottom:28px; }
+
+    .brand{
+      font-family:var(--mono);
+      font-size:22px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.8px;
+      line-height:1.1;
+    }
+
+    .meta{
+      font-family:var(--mono);
+      margin-top:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      font-size:13px;
+    }
+
+    .meta a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      text-decoration:none;
+      width:fit-content;
+      border-bottom:1px solid transparent;
+      padding-bottom:2px;
+    }
+
+    .meta a:hover{ border-bottom-color:var(--accent); }
+
+    .meta img{
+      width:15px;
+      height:15px;
+      object-fit:contain;
+      opacity:0.85;
+      display:block;
+    }
+
+    .meta a:hover img{ opacity:1; }
+
+    /* ===== Feed ===== */
+    main{
+      border-top:1px solid var(--border);
+      padding-top:24px;
+    }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .card{
+      width:100%;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+    }
+
+    .media{
+      width:100%;
+      display:block;
+      border:0;
+    }
+
+    .media--img{ height:auto; }
+
+    .media--video{
+      aspect-ratio:16 / 9;
+      width:100%;
+    }
+
+    .pair{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2px;
+      background:var(--border);
+    }
+
+    .stack{
+      display:grid;
+      gap:2px;
+      background:var(--border);
+    }
+
+    .pair--3{ grid-template-columns:1fr 1fr 1fr; }
+
+    .pair .media{
+      height:100%;
+      object-fit:cover;
+    }
+
+    .caption{
+      padding:16px 16px 18px;
+      border-top:1px solid var(--border);
+      background:#fff;
+    }
+
+    .caption h3{
+      font-family:var(--mono);
+      margin:0 0 8px;
+      font-size:12.5px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+    }
+
+    .caption p{
+      margin:0;
+      font-size:12.8px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .caption p.ja{
+      margin-top:8px;
+      font-family:var(--ja);
+      font-size:12.3px;
+      line-height:1.8;
+      letter-spacing:0.3px;
+    }
+
+    @media (max-width:720px){
+      .wrap{ padding:26px 18px 70px; }
+      .caption{ padding:14px 14px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">Haruku Nishikawa</div>
+
+      <div class="meta">
+        <a href="mailto:harukunishikawa@gmail.com">
+          <img src="email-1-svgrepo-com.svg" alt="Email icon">
+          harukunishikawa@gmail.com
+        </a>
+
+        <a href="https://www.linkedin.com/in/haruku-harry-nishikawa-062474251" target="_blank" rel="noopener noreferrer">
+          <img src="InBug-Black.png" alt="LinkedIn logo">
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="list">
+
+        <!-- Project Meridian launch -->
+        <article class="card">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/11fA_VgU-ZO_u1tC5fNaOeqZYstCIYZCC/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            title="Project Meridian launch video"
+            loading="lazy">
+          </iframe>
+          <div class="caption">
+            <h3>Project Meridian | Monash High Powered Rocketry</h3>
+            <p>Launch of Project Meridian, a 10,000 ft student hybrid rocket for AURC 2026. I made the fibreglass couplers and carbon-fibre fin wrap, and did the vinyl-cut livery.</p>
+            <p class="ja" lang="ja">AURC 2026向け10,000 ftハイブリッドロケット「Project Meridian」の打上げ。ガラス繊維カプラー、カーボンフィンラップ、カッティングシートのリバリーを担当。</p>
+          </div>
+        </article>
+
+        <!-- L1 certification launch -->
+        <article class="card">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            title="Tripoli Level 1 certification launch video"
+            loading="lazy">
+          </iframe>
+          <div class="caption">
+            <h3>Tripoli Level 1 Certification Rocket</h3>
+            <p>My scratch-built L1 rocket, designed, simulated and made solo. Flew to 2,700 ft and recovered intact.</p>
+            <p class="ja" lang="ja">設計・解析・製作を一人で行った自作L1ロケット。高度2,700 ftまで飛行し、無傷で回収。</p>
+          </div>
+        </article>
+
+        <!-- L2 certification launch -->
+        <article class="card">
+          <iframe
+            class="media media--video"
+            src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            title="Tripoli Level 2 certification launch video"
+            loading="lazy">
+          </iframe>
+          <div class="caption">
+            <h3>Tripoli Level 2 Certification Attempt</h3>
+            <p>My L2 attempt on a J250W motor, 4,100 ft simulated apogee. The parachute deployed, but tall crops and wind kept it lost after 11 hours of searching.</p>
+            <p class="ja" lang="ja">J250Wモーターによる自作L2ロケットの挑戦（シミュレーション高度4,100 ft）。パラシュートは開いたが、高い作物と強風で11時間捜索しても回収できず。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="pair">
+            <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
+            <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
+          </div>
+          <div class="caption">
+            <h3>L2 | The Build</h3>
+            <p>Fibreglass airframe, carbon-wrapped birch plywood fins, epoxy-coated PLA nose cone with a screamer.</p>
+            <p class="ja" lang="ja">ガラス繊維の機体、カーボンで補強したバーチ合板フィン、スクリーマー内蔵のエポキシ塗装PLAノーズコーン。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="pair pair--3">
+            <img class="media media--img" src="yvr-track.jpg" alt="Haruku on the track at Yarra Valley Railway" loading="lazy">
+            <img class="media media--img" src="yvr-thermite-mould.jpg" alt="Thermite welding mould clamped on the rail" loading="lazy">
+            <img class="media media--img" src="yvr-thermite-weld.jpg" alt="Completed thermite weld joining two rails" loading="lazy">
+          </div>
+          <div class="caption">
+            <h3>Yarra Valley Railway | Track Maintenance Volunteer</h3>
+            <p>Track maintenance volunteer: rail alignment, Pandrol clips and thermite welding.</p>
+            <p class="ja" lang="ja">線路保守ボランティア。レール調整、パンドロールクリップ取付け、テルミット溶接を担当。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="media media--img" src="r22-rig.jpg" alt="R-22 refrigeration heat pump experimental rig" loading="lazy">
+          <div class="caption">
+            <h3>Thermodynamics | R-22 Refrigeration Cycle Analysis</h3>
+            <p>Analysed an R-22 vapour compression cycle across three test conditions (COP 1.46&ndash;1.98) using TESTA and first-law energy balances. Built a MATLAB model over condenser temperatures of 300&ndash;330 K, calibrating a reduced-order Carnot efficiency model to the experimental data and validating COP and compressor power trends.</p>
+            <p class="ja" lang="ja">R-22蒸気圧縮冷凍サイクルを3条件で解析（COP 1.46〜1.98）。TESTAと熱力学第一法則で評価。MATLABで凝縮温度300〜330 Kのシミュレーションを行い、実験データで簡易カルノー効率モデルを校正し、COPと圧縮機動力の傾向を検証。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="stack">
+            <img class="media media--img" src="id-render.jpg" alt="Rendered cordless 18V impact driver" loading="lazy">
+            <img class="media media--img" src="id-foam-model.jpg" alt="Blue foam model of the impact driver being held, with the battery pack sliding on" loading="lazy">
+          </div>
+          <div class="caption">
+            <h3>Industrial Design | Impact Driver</h3>
+            <p>Coursework designing a cordless 18V impact driver, developed in a team under one cohesive brand identity. Modelled in Autodesk Fusion, prototyped in blue foam and rendered.</p>
+            <p class="ja" lang="ja">インダストリアルデザインの課題として、チームで統一したブランドアイデンティティのもと18Vインパクトドライバーを開発。Autodesk Fusionでモデリングし、ブルーフォームで模型を製作、レンダリング。</p>
+          </div>
+        </article>
+
+        <!-- Project Meridian poster (NEW, last card) -->
+        <article class="card">
+          <img class="media media--img" src="meridian-poster.jpg" alt="Project Meridian team poster showing the rocket overview, payload, air brakes, Solaris MkII engine and trajectory" loading="lazy">
+          <div class="caption">
+            <h3>Project Meridian | Poster, Livery &amp; Render</h3>
+            <p>I created this poster for Project Meridian, designed the livery, and did the render.</p>
+            <p class="ja" lang="ja">Project Meridianのポスターを制作し、リバリー（外装デザイン）とレンダリングを担当。</p>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
