@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haruku Nishikawa</title>
+  <meta name="description" content="Mechanical Engineering and Industrial Design student at Monash University, building rockets, composite structures and products by hand." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
     :root{
       --text:#111;
       --muted:#666;
+      --faint:#999;
       --border:#e9e9e9;
       --accent:#17c117;
       --bg:#fff;
@@ -21,6 +23,8 @@
     }
 
     *{ box-sizing:border-box; }
+
+    html{ scroll-behavior:smooth; }
 
     html, body{
       margin:0;
@@ -36,37 +40,53 @@
     .wrap{
       width:min(980px, 100%);
       margin:0 auto;
-      padding:32px 34px 80px;
+      padding:40px 34px 80px;
     }
 
     /* ===== Header ===== */
-    header{ margin-bottom:28px; }
+    header{ margin-bottom:36px; }
 
     .brand{
       font-family:var(--mono);
-      font-size:22px;
+      font-size:24px;
       font-weight:600;
       text-transform:uppercase;
       letter-spacing:0.8px;
       line-height:1.1;
+      margin:0;
+    }
+
+    .intro{
+      margin:14px 0 0;
+      max-width:640px;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .intro-ja{
+      margin:6px 0 0;
+      max-width:640px;
+      font-family:var(--ja);
+      font-size:13px;
+      line-height:1.8;
+      color:var(--muted);
     }
 
     .meta{
       font-family:var(--mono);
-      margin-top:12px;
+      margin-top:18px;
       display:flex;
-      flex-direction:column;
-      gap:10px;
+      flex-wrap:wrap;
+      gap:10px 22px;
       font-size:13px;
     }
 
     .meta a{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
       color:var(--text);
       text-decoration:none;
-      width:fit-content;
       border-bottom:1px solid transparent;
       padding-bottom:2px;
     }
@@ -81,12 +101,72 @@
       display:block;
     }
 
-    .meta a:hover img{ opacity:1; }
-
-    /* ===== Feed ===== */
-    main{
+    /* ===== Section nav ===== */
+    .toc{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
       border-top:1px solid var(--border);
-      padding-top:24px;
+      border-bottom:1px solid var(--border);
+      margin:0 -34px 8px;
+      padding:12px 34px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .toc a{
+      font-family:var(--mono);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+      color:var(--text);
+      text-decoration:none;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:6px 12px;
+      transition:border-color .15s, background .15s;
+    }
+
+    .toc a:hover{ border-color:var(--text); }
+
+    .toc a span{ color:var(--faint); margin-right:6px; }
+
+    /* ===== Sections ===== */
+    section{ padding-top:36px; scroll-margin-top:60px; }
+
+    .section-title{
+      display:flex;
+      align-items:baseline;
+      gap:12px;
+      margin:0 0 18px;
+      font-family:var(--mono);
+      font-size:14px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .section-title .num{ color:var(--accent); }
+
+    .section-title .ja{
+      font-family:var(--ja);
+      font-size:12px;
+      font-weight:400;
+      letter-spacing:0.5px;
+      color:var(--faint);
+      text-transform:none;
+    }
+
+    .section-title::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:var(--border);
+      align-self:center;
     }
 
     .list{
@@ -116,15 +196,87 @@
       width:100%;
     }
 
+    /* ===== Video thumbnail (click to play) ===== */
+    .video{
+      position:relative;
+      aspect-ratio:16 / 9;
+      width:100%;
+      display:block;
+      padding:0;
+      border:0;
+      cursor:pointer;
+      overflow:hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px) 0 0 / 32px 32px,
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px) 0 0 / 32px 32px,
+        radial-gradient(ellipse at 50% 40%, #2a2f36 0%, #111418 75%);
+    }
+
+    .video img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .4s ease;
+    }
+
+    .video::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%);
+    }
+
+    .video:hover img{ transform:scale(1.03); }
+
+    .play{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:72px;
+      height:72px;
+      margin:-36px 0 0 -36px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.92);
+      display:grid;
+      place-items:center;
+      z-index:2;
+      box-shadow:0 6px 24px rgba(0,0,0,0.3);
+      transition:transform .2s ease, background .2s;
+    }
+
+    .play svg{ width:24px; height:24px; margin-left:4px; fill:#111; }
+
+    .video:hover .play{ transform:scale(1.08); background:#fff; }
+
+    .video-label{
+      position:absolute;
+      left:16px;
+      bottom:14px;
+      z-index:2;
+      font-family:var(--mono);
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:0.8px;
+      text-transform:uppercase;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .video-label::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
     .pair{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:2px;
-      background:var(--border);
-    }
-
-    .stack{
-      display:grid;
       gap:2px;
       background:var(--border);
     }
@@ -134,6 +286,12 @@
     .pair .media{
       height:100%;
       object-fit:cover;
+    }
+
+    .stack{
+      display:grid;
+      gap:2px;
+      background:var(--border);
     }
 
     .caption{
@@ -166,9 +324,22 @@
       letter-spacing:0.3px;
     }
 
+    footer{
+      margin-top:56px;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--faint);
+    }
+
     @media (max-width:720px){
-      .wrap{ padding:26px 18px 70px; }
+      .wrap{ padding:28px 18px 70px; }
+      .toc{ margin:0 -18px 8px; padding:10px 18px; flex-wrap:nowrap; overflow-x:auto; }
+      .toc a{ white-space:nowrap; font-size:11px; padding:6px 10px; }
       .caption{ padding:14px 14px 16px; }
+      .play{ width:58px; height:58px; margin:-29px 0 0 -29px; }
+      .play svg{ width:20px; height:20px; }
     }
   </style>
 </head>
@@ -177,134 +348,183 @@
   <div class="wrap">
 
     <header>
-      <div class="brand">Haruku Nishikawa</div>
+      <h1 class="brand">Haruku Nishikawa</h1>
+      <p class="intro">Mechanical Engineering &amp; Industrial Design student at Monash University, building rockets, composite structures and products by hand.</p>
+      <p class="intro-ja" lang="ja">モナッシュ大学で機械工学とインダストリアルデザインを専攻。ロケット、複合材構造、プロダクトを自らの手でつくっています。</p>
 
       <div class="meta">
         <a href="mailto:harukunishikawa@gmail.com">
-          <img src="email-1-svgrepo-com.svg" alt="Email icon">
+          <img src="email-1-svgrepo-com.svg" alt="">
           harukunishikawa@gmail.com
         </a>
-
         <a href="https://www.linkedin.com/in/haruku-harry-nishikawa-062474251" target="_blank" rel="noopener noreferrer">
-          <img src="InBug-Black.png" alt="LinkedIn logo">
+          <img src="InBug-Black.png" alt="">
           LinkedIn
         </a>
       </div>
     </header>
 
+    <nav class="toc" aria-label="Sections">
+      <a href="#rocketry"><span>01</span>Rocketry</a>
+      <a href="#engineering"><span>02</span>Engineering</a>
+      <a href="#design"><span>03</span>Design</a>
+    </nav>
+
     <main>
-      <section class="list">
 
-        <!-- Project Meridian launch -->
-        <article class="card">
-          <iframe
-            class="media media--video"
-            src="https://drive.google.com/file/d/11fA_VgU-ZO_u1tC5fNaOeqZYstCIYZCC/preview"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            title="Project Meridian launch video"
-            loading="lazy">
-          </iframe>
-          <div class="caption">
-            <h3>Project Meridian | Monash High Powered Rocketry</h3>
-            <p>Launch of Project Meridian, a 10,000 ft student hybrid rocket for AURC 2026. I made the fibreglass couplers and carbon-fibre fin wrap, and did the vinyl-cut livery.</p>
-            <p class="ja" lang="ja">AURC 2026向け10,000 ftハイブリッドロケット「Project Meridian」の打上げ。ガラス繊維カプラー、カーボンフィンラップ、カッティングシートのリバリーを担当。</p>
-          </div>
-        </article>
+      <!-- ===== 01 ROCKETRY ===== -->
+      <section id="rocketry">
+        <h2 class="section-title"><span class="num">01</span> Rocketry <span class="ja" lang="ja">ロケット</span></h2>
+        <div class="list">
 
-        <!-- L1 certification launch -->
-        <article class="card">
-          <iframe
-            class="media media--video"
-            src="https://drive.google.com/file/d/1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl/preview"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            title="Tripoli Level 1 certification launch video"
-            loading="lazy">
-          </iframe>
-          <div class="caption">
-            <h3>Tripoli Level 1 Certification Rocket</h3>
-            <p>My scratch-built L1 rocket, designed, simulated and made solo. Flew to 2,700 ft and recovered intact.</p>
-            <p class="ja" lang="ja">設計・解析・製作を一人で行った自作L1ロケット。高度2,700 ftまで飛行し、無傷で回収。</p>
-          </div>
-        </article>
+          <article class="card">
+            <button class="video" data-src="https://drive.google.com/file/d/11fA_VgU-ZO_u1tC5fNaOeqZYstCIYZCC/preview" aria-label="Play Project Meridian launch video">
+              <img src="https://drive.google.com/thumbnail?id=11fA_VgU-ZO_u1tC5fNaOeqZYstCIYZCC&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
+              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="video-label">Launch video</span>
+            </button>
+            <div class="caption">
+              <h3>Project Meridian | Monash High Powered Rocketry</h3>
+              <p>Launch of Project Meridian, a 10,000 ft student hybrid rocket for AURC 2026. I made the fibreglass couplers and carbon-fibre fin wrap, and did the vinyl-cut livery.</p>
+              <p class="ja" lang="ja">AURC 2026向け10,000 ftハイブリッドロケット「Project Meridian」の打上げ。ガラス繊維カプラー、カーボンフィンラップ、カッティングシートのリバリーを担当。</p>
+            </div>
+          </article>
 
-        <!-- L2 certification launch -->
-        <article class="card">
-          <iframe
-            class="media media--video"
-            src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            title="Tripoli Level 2 certification launch video"
-            loading="lazy">
-          </iframe>
-          <div class="caption">
-            <h3>Tripoli Level 2 Certification Attempt</h3>
-            <p>My L2 attempt on a J250W motor, 4,100 ft simulated apogee. The parachute deployed, but tall crops and wind kept it lost after 11 hours of searching.</p>
-            <p class="ja" lang="ja">J250Wモーターによる自作L2ロケットの挑戦（シミュレーション高度4,100 ft）。パラシュートは開いたが、高い作物と強風で11時間捜索しても回収できず。</p>
-          </div>
-        </article>
+          <article class="card">
+            <button class="video" data-src="https://drive.google.com/file/d/1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl/preview" aria-label="Play Tripoli Level 1 launch video">
+              <img src="https://drive.google.com/thumbnail?id=1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
+              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="video-label">Launch video</span>
+            </button>
+            <div class="caption">
+              <h3>Tripoli Level 1 Certification Rocket</h3>
+              <p>My scratch-built L1 rocket, designed, simulated and made solo. Flew to 2,700 ft and recovered intact.</p>
+              <p class="ja" lang="ja">設計・解析・製作を一人で行った自作L1ロケット。高度2,700 ftまで飛行し、無傷で回収。</p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="pair">
-            <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
-            <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
-          </div>
-          <div class="caption">
-            <h3>L2 | The Build</h3>
-            <p>Fibreglass airframe, carbon-wrapped birch plywood fins, epoxy-coated PLA nose cone with a screamer.</p>
-            <p class="ja" lang="ja">ガラス繊維の機体、カーボンで補強したバーチ合板フィン、スクリーマー内蔵のエポキシ塗装PLAノーズコーン。</p>
-          </div>
-        </article>
+          <article class="card">
+            <button class="video" data-src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview" aria-label="Play Tripoli Level 2 launch video">
+              <img src="https://drive.google.com/thumbnail?id=1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
+              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="video-label">Launch video</span>
+            </button>
+            <div class="caption">
+              <h3>Tripoli Level 2 Certification Attempt</h3>
+              <p>My L2 attempt on a J250W motor, 4,100 ft simulated apogee. The parachute deployed, but tall crops and wind kept it lost after 11 hours of searching.</p>
+              <p class="ja" lang="ja">J250Wモーターによる自作L2ロケットの挑戦（シミュレーション高度4,100 ft）。パラシュートは開いたが、高い作物と強風で11時間捜索しても回収できず。</p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="pair pair--3">
-            <img class="media media--img" src="yvr-track.jpg" alt="Haruku on the track at Yarra Valley Railway" loading="lazy">
-            <img class="media media--img" src="yvr-thermite-mould.jpg" alt="Thermite welding mould clamped on the rail" loading="lazy">
-            <img class="media media--img" src="yvr-thermite-weld.jpg" alt="Completed thermite weld joining two rails" loading="lazy">
-          </div>
-          <div class="caption">
-            <h3>Yarra Valley Railway | Track Maintenance Volunteer</h3>
-            <p>Track maintenance volunteer: rail alignment, Pandrol clips and thermite welding.</p>
-            <p class="ja" lang="ja">線路保守ボランティア。レール調整、パンドロールクリップ取付け、テルミット溶接を担当。</p>
-          </div>
-        </article>
+          <article class="card">
+            <div class="pair">
+              <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
+              <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>L2 | The Build</h3>
+              <p>Fibreglass airframe, carbon-wrapped birch plywood fins, epoxy-coated PLA nose cone with a screamer.</p>
+              <p class="ja" lang="ja">ガラス繊維の機体、カーボンで補強したバーチ合板フィン、スクリーマー内蔵のエポキシ塗装PLAノーズコーン。</p>
+            </div>
+          </article>
 
-        <article class="card">
-          <img class="media media--img" src="r22-rig.jpg" alt="R-22 refrigeration heat pump experimental rig" loading="lazy">
-          <div class="caption">
-            <h3>Thermodynamics | R-22 Refrigeration Cycle Analysis</h3>
-            <p>Analysed an R-22 vapour compression cycle across three test conditions (COP 1.46&ndash;1.98) using TESTA and first-law energy balances. Built a MATLAB model over condenser temperatures of 300&ndash;330 K, calibrating a reduced-order Carnot efficiency model to the experimental data and validating COP and compressor power trends.</p>
-            <p class="ja" lang="ja">R-22蒸気圧縮冷凍サイクルを3条件で解析（COP 1.46〜1.98）。TESTAと熱力学第一法則で評価。MATLABで凝縮温度300〜330 Kのシミュレーションを行い、実験データで簡易カルノー効率モデルを校正し、COPと圧縮機動力の傾向を検証。</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="stack">
-            <img class="media media--img" src="id-render.jpg" alt="Rendered cordless 18V impact driver" loading="lazy">
-            <img class="media media--img" src="id-foam-model.jpg" alt="Blue foam model of the impact driver being held, with the battery pack sliding on" loading="lazy">
-          </div>
-          <div class="caption">
-            <h3>Industrial Design | Impact Driver</h3>
-            <p>Coursework designing a cordless 18V impact driver, developed in a team under one cohesive brand identity. Modelled in Autodesk Fusion, prototyped in blue foam and rendered.</p>
-            <p class="ja" lang="ja">インダストリアルデザインの課題として、チームで統一したブランドアイデンティティのもと18Vインパクトドライバーを開発。Autodesk Fusionでモデリングし、ブルーフォームで模型を製作、レンダリング。</p>
-          </div>
-        </article>
-
-        <!-- Project Meridian poster (NEW, last card) -->
-        <article class="card">
-          <img class="media media--img" src="meridian-poster.jpg" alt="Project Meridian team poster showing the rocket overview, payload, air brakes, Solaris MkII engine and trajectory" loading="lazy">
-          <div class="caption">
-            <h3>Project Meridian | Poster, Livery &amp; Render</h3>
-            <p>I created this poster for Project Meridian, designed the livery, and did the render.</p>
-            <p class="ja" lang="ja">Project Meridianのポスターを制作し、リバリー（外装デザイン）とレンダリングを担当。</p>
-          </div>
-        </article>
-
+        </div>
       </section>
+
+      <!-- ===== 02 ENGINEERING ===== -->
+      <section id="engineering">
+        <h2 class="section-title"><span class="num">02</span> Engineering <span class="ja" lang="ja">エンジニアリング</span></h2>
+        <div class="list">
+
+          <article class="card">
+            <div class="pair pair--3">
+              <img class="media media--img" src="yvr-track.jpg" alt="Haruku on the track at Yarra Valley Railway" loading="lazy">
+              <img class="media media--img" src="yvr-thermite-mould.jpg" alt="Thermite welding mould clamped on the rail" loading="lazy">
+              <img class="media media--img" src="yvr-thermite-weld.jpg" alt="Completed thermite weld joining two rails" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>Yarra Valley Railway | Track Maintenance Volunteer</h3>
+              <p>Track maintenance volunteer: rail alignment, Pandrol clips and thermite welding.</p>
+              <p class="ja" lang="ja">線路保守ボランティア。レール調整、パンドロールクリップ取付け、テルミット溶接を担当。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="media media--img" src="r22-rig.jpg" alt="R-22 refrigeration heat pump experimental rig" loading="lazy">
+            <div class="caption">
+              <h3>Thermodynamics | R-22 Refrigeration Cycle Analysis</h3>
+              <p>Analysed an R-22 vapour compression cycle across three test conditions (COP 1.46&ndash;1.98) using TESTA and first-law energy balances. Built a MATLAB model over condenser temperatures of 300&ndash;330 K, calibrating a reduced-order Carnot efficiency model to the experimental data and validating COP and compressor power trends.</p>
+              <p class="ja" lang="ja">R-22蒸気圧縮冷凍サイクルを3条件で解析（COP 1.46〜1.98）。TESTAと熱力学第一法則で評価。MATLABで凝縮温度300〜330 Kのシミュレーションを行い、実験データで簡易カルノー効率モデルを校正し、COPと圧縮機動力の傾向を検証。</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== 03 DESIGN ===== -->
+      <section id="design">
+        <h2 class="section-title"><span class="num">03</span> Design <span class="ja" lang="ja">デザイン</span></h2>
+        <div class="list">
+
+          <article class="card">
+            <div class="stack">
+              <img class="media media--img" src="id-render.jpg" alt="Rendered cordless 18V impact driver" loading="lazy">
+              <img class="media media--img" src="id-foam-model.jpg" alt="Blue foam model of the impact driver being held, with the battery pack sliding on" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>Industrial Design | Impact Driver</h3>
+              <p>Coursework designing a cordless 18V impact driver, developed in a team under one cohesive brand identity. Modelled in Autodesk Fusion, prototyped in blue foam and rendered.</p>
+              <p class="ja" lang="ja">インダストリアルデザインの課題として、チームで統一したブランドアイデンティティのもと18Vインパクトドライバーを開発。Autodesk Fusionでモデリングし、ブルーフォームで模型を製作、レンダリング。</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
     </main>
 
+    <footer>&copy; Haruku Nishikawa</footer>
+
   </div>
+
+  <!-- Analytics: GoatCounter (free, no cookies). Dashboard: https://harukunishikawa.goatcounter.com -->
+  <script data-goatcounter="https://harukunishikawa.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+
+  <script>
+    // Send a named event to GoatCounter (shows up as its own row in the dashboard)
+    function track(name, title) {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: title || name, event: true });
+      }
+    }
+
+    // Track email / LinkedIn clicks and section-nav clicks
+    document.querySelectorAll('.meta a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        track(a.href.indexOf('mailto:') === 0 ? 'click-email' : 'click-linkedin');
+      });
+    });
+    document.querySelectorAll('.toc a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        track('nav-' + a.getAttribute('href').slice(1));
+      });
+    });
+
+    // Swap the thumbnail for the Google Drive player when clicked
+    document.querySelectorAll('.video').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        track('video-' + btn.getAttribute('aria-label').replace(/^Play | launch video$/g, '').toLowerCase().replace(/\s+/g, '-'),
+              btn.getAttribute('aria-label'));
+        var f = document.createElement('iframe');
+        f.className = 'media media--video';
+        f.src = btn.dataset.src;
+        f.allow = 'autoplay; fullscreen';
+        f.allowFullscreen = true;
+        f.title = btn.getAttribute('aria-label');
+        btn.replaceWith(f);
+      });
+    });
+  </script>
 </body>
 </html>
