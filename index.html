@@ -296,6 +296,24 @@
       background:var(--border);
     }
 
+    .split{
+      display:grid;
+      grid-template-columns:minmax(0, 380px) 1fr;
+    }
+
+    .split .media{ height:100%; object-fit:cover; }
+
+    .sim{ border-bottom:1px solid var(--border); background:#fff; }
+
+    .split .caption{
+      border-top:0;
+      border-left:1px solid var(--border);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:24px;
+    }
+
     .caption{
       padding:16px 16px 18px;
       border-top:1px solid var(--border);
@@ -340,6 +358,8 @@
       .toc{ margin:0 -18px 8px; padding:10px 18px; flex-wrap:nowrap; overflow-x:auto; }
       .toc a{ white-space:nowrap; font-size:11px; padding:6px 10px; }
       .caption{ padding:14px 14px 16px; }
+      .split{ grid-template-columns:1fr; }
+      .split .caption{ border-left:0; border-top:1px solid var(--border); padding:14px 14px 16px; }
       .play{ width:58px; height:58px; margin:-29px 0 0 -29px; }
       .play svg{ width:20px; height:20px; }
     }
@@ -351,8 +371,8 @@
 
     <header>
       <h1 class="brand">Haruku Nishikawa</h1>
-      <p class="intro">Mechanical Engineering &amp; Industrial Design student at Monash University, building rockets, composite structures and products by hand.</p>
-      <p class="intro-ja" lang="ja">モナッシュ大学で機械工学とインダストリアルデザインを専攻。ロケット、複合材構造、プロダクトを自らの手でつくっています。</p>
+      <p class="intro">Mechanical Engineering &amp; Industrial Design student at Monash University and Tripoli Level 2 certified rocketeer, building rockets, composite structures and products by hand.</p>
+      <p class="intro-ja" lang="ja">モナッシュ大学で機械工学とインダストリアルデザインを専攻。Tripoliレベル2認定を取得し、ロケット、複合材構造、プロダクトを自らの手でつくっています。</p>
 
       <div class="meta">
         <a href="mailto:harukunishikawa@gmail.com">
@@ -393,6 +413,56 @@
           </article>
 
           <article class="card">
+            <button class="video" data-src="https://drive.google.com/file/d/1UIo2GKOHfSRAxQyGA7JgZWfMXChX2jzN/preview" aria-label="Play Tripoli Level 2 certification launch video">
+              <img src="https://drive.google.com/thumbnail?id=1UIo2GKOHfSRAxQyGA7JgZWfMXChX2jzN&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
+              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="video-label">Certification flight</span>
+            </button>
+            <div class="caption">
+              <h3>Tripoli Level 2 Certified</h3>
+              <p>Certified Tripoli Level 2 in October 2026 with a GPS-tracked flight to 4,365 ft. Now working towards Level 3.</p>
+              <p class="ja" lang="ja">2026年10月、GPS追跡付きの飛行で高度4,365 ftに到達し、Tripoliレベル2認定を取得。現在はレベル3に挑戦中。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="media media--img sim" src="l2-openrocket.jpg" alt="OpenRocket design of the L2 rocket: 86.5 cm long, 6 cm diameter, J250W motor, simulated apogee 4,764 ft" loading="lazy">
+            <div class="split">
+              <img class="media media--img" src="l2-flight-data.jpg" alt="GPS tracker app showing max altitude 4,365 ft, max velocity 745 ft/s and the flight path over farmland" loading="lazy">
+              <div class="caption">
+                <h3>L2 | Simulation vs Flight</h3>
+                <p>Designed and simulated in OpenRocket, then flown with a GPS tracker after losing my first L2 rocket. Predicted 4,764 ft and 807 ft/s; measured 4,365 ft and 745 ft/s, landing about 935 m from the pad. The ~8% shortfall likely came from extra drag (the airframe wasn&rsquo;t sanded smooth enough) and strong wind on the day.</p>
+                <p class="ja" lang="ja">OpenRocketで設計・シミュレーションを行い、初回機体を失った教訓からGPSトラッカーを搭載して飛行。予測は4,764 ft・807 ft/s、実測は4,365 ft・745 ft/s。射点から約935 m離れた着地点を特定。約8%の差は、機体表面の研磨不足による抗力増加と当日の強風が主な要因と考えられる。</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="video" data-src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview" aria-label="Play Tripoli Level 2 first attempt launch video">
+              <img src="https://drive.google.com/thumbnail?id=1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
+              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
+              <span class="video-label">Launch video</span>
+            </button>
+            <div class="caption">
+              <h3>Tripoli Level 2 | First Attempt</h3>
+              <p>My L2 attempt on a J250W motor, 4,100 ft simulated apogee. The parachute deployed, but tall crops and wind kept it lost after 11 hours of searching.</p>
+              <p class="ja" lang="ja">J250Wモーターによる自作L2ロケットの挑戦（シミュレーション高度4,100 ft）。パラシュートは開いたが、高い作物と強風で11時間捜索しても回収できず。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="pair">
+              <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
+              <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
+            </div>
+            <div class="caption">
+              <h3>L2 First Attempt | The Build</h3>
+              <p>Fibreglass airframe, carbon-wrapped birch plywood fins, epoxy-coated PLA nose cone with a screamer.</p>
+              <p class="ja" lang="ja">ガラス繊維の機体、カーボンで補強したバーチ合板フィン、スクリーマー内蔵のエポキシ塗装PLAノーズコーン。</p>
+            </div>
+          </article>
+
+          <article class="card">
             <button class="video" data-src="https://drive.google.com/file/d/1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl/preview" aria-label="Play Tripoli Level 1 launch video">
               <img src="https://drive.google.com/thumbnail?id=1alJvHDEdTt1N2ucVBxUO-ds1S8dS-Qxl&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
               <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
@@ -414,32 +484,6 @@
               <h3>L1 | Custom Parachute</h3>
               <p>Custom 6-gore parachute in ripstop nylon and Nomex, sewn for a 4 m/s target descent. Recovered the rocket intact from ~2,700 ft, then compared simulation with flight data to refine the next design.</p>
               <p class="ja" lang="ja">目標降下速度4 m/sに向けて、リップストップナイロンとノーメックスで6枚ゴアのパラシュートを自作。高度約2,700 ftから機体を無傷で回収し、シミュレーション予測と飛行データを比較して次の設計への改善点を整理。</p>
-            </div>
-          </article>
-
-
-          <article class="card">
-            <button class="video" data-src="https://drive.google.com/file/d/1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW/preview" aria-label="Play Tripoli Level 2 launch video">
-              <img src="https://drive.google.com/thumbnail?id=1OCHSDD-1k9rJnVnMkRYly_5gbQ_8lATW&amp;sz=w1600" alt="" loading="lazy" onerror="this.remove()">
-              <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>
-              <span class="video-label">Launch video</span>
-            </button>
-            <div class="caption">
-              <h3>Tripoli Level 2 Certification Attempt</h3>
-              <p>My L2 attempt on a J250W motor, 4,100 ft simulated apogee. The parachute deployed, but tall crops and wind kept it lost after 11 hours of searching.</p>
-              <p class="ja" lang="ja">J250Wモーターによる自作L2ロケットの挑戦（シミュレーション高度4,100 ft）。パラシュートは開いたが、高い作物と強風で11時間捜索しても回収できず。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="pair">
-              <img class="media media--img" src="l2-pad.jpg" alt="Haruku with his L2 rocket on the launch pad" loading="lazy">
-              <img class="media media--img" src="l2-rocket.jpg" alt="L2 rocket on the launch rail" loading="lazy">
-            </div>
-            <div class="caption">
-              <h3>L2 | The Build</h3>
-              <p>Fibreglass airframe, carbon-wrapped birch plywood fins, epoxy-coated PLA nose cone with a screamer.</p>
-              <p class="ja" lang="ja">ガラス繊維の機体、カーボンで補強したバーチ合板フィン、スクリーマー内蔵のエポキシ塗装PLAノーズコーン。</p>
             </div>
           </article>
 
